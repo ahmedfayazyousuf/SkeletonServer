@@ -37,7 +37,7 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.send(`Hello world from the REGISTER server`);
+    res.send(`Hello world from the Home server`);
 });
  
 
