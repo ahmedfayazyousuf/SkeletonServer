@@ -7,7 +7,7 @@ const cors = require("cors");
 
 app.use(
     cors({
-        origin: 'http://192.168.0.110:3000/register',
+        origin: 'http://192.168.0.110:3000/signup',
     })
 )
 
