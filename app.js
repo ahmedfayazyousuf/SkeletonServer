@@ -3,6 +3,13 @@ const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 const authenticate = require("./middleware/authenticate");
+const cors = require("cors");
+
+app.use(
+    cors({
+        origin: 'http://localhost:3000/signup',
+    })
+)
 
 dotenv.config({path: './config.env' });
 
