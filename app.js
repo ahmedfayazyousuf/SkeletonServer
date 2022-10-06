@@ -7,7 +7,7 @@ const cors = require("cors");
 
 app.use(
     cors({
-        origin: 'https://thhbuilderenv.vercel.app/', 
+        origin: 'http://192.168.0.110:3000', 
     })
 )
 
