@@ -29,8 +29,8 @@ app.get('/login', (req, res) => {
     res.send(`Hello world from the LOGIN server`);
 });
 
-app.get('/signup', (req, res) => {
-    //res.send(`Hello world from the SIGNUP server`);
+app.get('/', (req, res) => {
+    res.send(`Hello world from the SIGNUP server`);
 });
  
 
