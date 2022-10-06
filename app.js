@@ -7,7 +7,7 @@ const cors = require("cors");
 
 app.use(
     cors({
-        origin: 'http://192.168.0.110:3000/signup',
+        origin: 'http://192.168.0.110:3000',
     })
 )
 
@@ -37,7 +37,7 @@ app.get('/login', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.send(`Hello world from the SIGNUP server`);
+    res.send(`Hello world from the REGISTER server`);
 });
  
 
