@@ -1,4 +1,4 @@
-// const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
@@ -64,17 +64,17 @@ router.post('/login', async (req, res) => {
 
         const userLogin = await User.findOne({ email:email });
 
-        // console.log(userLogin);
+        console.log(userLogin);
 
         if(userLogin) {
             const isMatch = await bcrypt.compare(password, userLogin.password);
             token = await userLogin.generateAuthToken();
             console.log(token);
 
-            // res.cookie("jwtoken", token, {
-            //     expires: new Date(Date.now() + 25892000000),
-            //     httpOnly: true
-            // });
+            res.cookie("jwtoken", token, {
+                expires: new Date(Date.now() + 25892000000),
+                httpOnly: true
+            });
 
         if(!isMatch){
             res.status(400).json({ error: "Invalid Credentials - Error 16"});
@@ -98,7 +98,7 @@ router.get('/profile', authenticate, (req, res) => {
 
 router.get('/logout', (req, res) => {
     console.log(`Hello Logout Page`);
-    // res.clearCookie('jwtoken', { path: '/' });
+    res.clearCookie('jwtoken', { path: '/' });
     res.status(200).send('User Logged Out');
 });
 
