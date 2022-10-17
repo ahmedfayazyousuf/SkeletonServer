@@ -3,13 +3,13 @@ const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 const authenticate = require("./middleware/authenticate");
-// const cors = require("cors");
+const cors = require("cors");
 
-// app.use(
-//     cors({
-//         origin: 'http://192.168.0.110:3000/', 
-//     })
-// )
+app.use(
+    cors({
+        origin: 'http://192.168.0.110:3000/', 
+    })
+)
 
 dotenv.config({path: './config.env' });
 
