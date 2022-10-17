@@ -3,13 +3,13 @@ const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 const authenticate = require("./middleware/authenticate");
-const cors = require("cors");
+// const cors = require("cors");
 
-app.use(
-    cors({
-        origin: 'http://192.168.0.110:3000/', 
-    })
-)
+// app.use(
+//     cors({
+//         origin: 'http://192.168.0.110:3000/', 
+//     })
+// )
 
 dotenv.config({path: './config.env' });
 
@@ -32,8 +32,8 @@ app.get('/formbuilder', (req, res) => {
     //res.send(`Hello world from the FORMBUILDER server`);
 });
 
-app.get('/login', (req, res) => {
-    res.send(`Hello world from the LOGIN server`);
+app.get('/register', (req, res) => {
+    res.send(`Hello world from the REG server`);
 });
 
 app.get('/', (req, res) => {
